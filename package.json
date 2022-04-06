@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc subtitle.js --target es5 --allowJs --module none --outfile dist/subtitle.js",
-    "build-and-commit": "node -e \"const mssg = process.argv[1]; require('child_process').execSync('npm run build && git add . && git commit -m \\\"' + mssg + '\\\"', { stdio:[0, 1, 2] })\""
+    "minify": "uglifyjs --compress --mangle --output dist/subtitle.min.js -- dist/subtitle.js",
+    "build-and-commit": "node -e \"const mssg = process.argv[1]; require('child_process').execSync('npm run build && npm run minify && git add . && git commit -m \\\"' + mssg + '\\\"', { stdio:[0, 1, 2] })\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "uglify-js": "^3.15.3"
   }
 }

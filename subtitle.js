@@ -1,6 +1,3 @@
-// import io from "socket.io";
-// import * as uuid from "uuid";
-
 class SubtitleGenerator {
   constructor(room) {
     this.room = room;
