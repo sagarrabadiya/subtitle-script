@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc subtitle.js --target es5 --allowJs --module none --outfile dist/subtitle.js"
+    "build": "tsc subtitle.js --target es5 --allowJs --module none --outfile dist/subtitle.js",
+    "build-and-commit": "node -e \"const mssg = process.argv[1]; require('child_process').execSync('npm run build && git add . && git commit -m \\\"' + mssg + '\\\"', { stdio:[0, 1, 2] })\""
   },
-  "pre-commit": [
-    "build"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sagarrabadiya/subtitle-script.git"
@@ -24,7 +22,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "pre-commit": "^1.2.2",
     "typescript": "^4.6.3"
   }
 }
