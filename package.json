@@ -1,0 +1,30 @@
+{
+  "name": "subtitle-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc subtitle.js --target es5 --allowJs --module none --outfile dist/subtitle.js"
+  },
+  "pre-commit": [
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagarrabadiya/subtitle-script.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sagarrabadiya/subtitle-script/issues"
+  },
+  "homepage": "https://github.com/sagarrabadiya/subtitle-script#readme",
+  "dependencies": {
+    "socket.io": "^2.3.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "typescript": "^4.6.3"
+  }
+}
